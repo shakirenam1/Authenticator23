@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Requests</title>
+    <link rel="stylesheet" href="myrequests.css">
+    <script>
+        $(document).ready(function() {
+            $('#signInForm').submit(function(event) {
+                event.preventDefault();
+                var userId = $('#email').val(); // Assuming the email field is used as userId
+                var password = $('#password').val();
+
+                $.ajax({
+                    url: '/authenticate', // Make sure this URL is reachable from the client
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ userId: userId, password: password }),
+                    success: function(response) {
+                        alert(response);
+                        window.location.href = "serviceRequest.html";
+                    },
+                    error: function(xhr) {
+                        alert(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="fixed-menu">
+        <div class="header">
+            <img src="gwin.png" alt="Logo" class="logo">
+            <h1 id="myrequeststext">MY REQUESTS</h1>
+            
+        </div>
+        <div class="menu-bar">
+            <ul class="main-menu">
+    
+                <!-- Modify the link for Events to scroll to the events section -->
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="myservices.html">My Services</a></li>
+                <li><a href="myrequests.html">My Requests</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="404.html">About US</a></li>
+                <li><a href="404.html"> FAQ</a></li>
+            </ul>
+        <ul class="right-menu">
+            <div class="dropdown">
+                <button class="dropdown-btn">Settings</button>
+                <div class="dropdown-content">
+                    <a href="profile.html">Profile</a>
+                    <a href="#">Edit Account</a>
+                    <a href="home.html">Logout</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+
+<br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+<br>
+ <div class="container" id="serviceRequestsContainer">
+    <h2>Service Requests</h2>
+    <table id="serviceRequestsTable" class="table-container">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Service Info</th>
+            <th>Payment Amount</th>
+            <th>Creator Email</th>
+            <th>Creator Phone</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody id="serviceRequestsList">
+        <!-- Service requests will be inserted here by the AJAX script -->
+        </tbody>
+    </table>
+</div>
+
+
+
+  <div class="footer">
+    <p>&copy; 2024 George Washington Interactive Network</p>
+    <br>
+    <br>
+</div>
+    
+</body>
+</html>

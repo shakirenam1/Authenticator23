@@ -1,0 +1,195 @@
+/* HOME PAGE TOP HEADERS WITH SIGN IN AND SIGN UP AND LINKS*/
+html, body {
+    height: 100%;
+  }
+  body {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  #myprofiletext{
+  margin-left: -950px;
+  color: #00578a;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 100; /* Set a higher z-index value */
+  
+  }
+  
+  .dropdown-btn {
+    background-color: transparent;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content {
+    right: 0;
+  }
+  
+  .logo {
+    width: 200px; /* Set width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add space between logo and text */
+  }
+  .menu-bar {
+    background-color: #00578a;
+    color: #dde6f9;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust alignment */
+  }
+  .menu-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-bar ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .menu-bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Gibson-Book", Helvetica, Arial, sans-serif;
+  }
+  
+  .menu-bar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  #signUpBtn {
+    padding: 8px 15px;
+    background-color: rgba(230, 230, 230, 0.5); /* White-ish grey translucent background */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;}
+  
+   #signInButton {
+    padding: 8px 15px;
+    background-color: rgba(230, 230, 230, 0.5); /* White-ish grey translucent background */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;}
+  /* HOME PAGE TOP HEADERS WITH SIGN IN AND SIGN UP AND LINKS*/
+
+
+
+
+
+
+#background{
+  margin-top: 0px;
+  width: 100%;
+  height: 530px;
+  object-fit:cover;
+  background-image: url('gwhomeimg.png');
+}
+
+
+
+
+  
+
+
+
+.profile-container {
+    max-width: 600px;
+  
+    margin: 50px auto;
+    height: 50%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .profile-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .column {
+    width: 48%; /* Adjust as needed */
+  }
+  
+  .profile-field {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  p {
+    margin: 0;
+    color: #666;
+  }
+
+
+
+
+/* FOOTER */
+
+.footer {
+  background-color: white;
+  color: #033c5a;
+  text-align: center;
+  padding: 0px 0;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  position: fixed;
+}
+/* FOOTER */

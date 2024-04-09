@@ -1,0 +1,226 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: #033c5a;
+    padding: 10px;
+    font-family: 'Helvetica Neu', sans-serif;
+  
+  }
+  .logo {
+    width: 200px; /* Set width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add space between logo and text */
+  }
+
+  .menu-bar {
+    background-color: #00578a;
+    color: #dde6f9;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust alignment */
+  }
+  .menu-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-bar ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  .menu-bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Gibson-Book", Helvetica, Arial, sans-serif;
+  }
+
+  .menu-bar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  
+.right-menu { /* New */
+  display: flex;
+  align-items: center;
+}
+
+.right-menu li {
+  margin-left: 20px; /* Adjust spacing between items */
+}
+  
+.form-background{
+    background-image: url('tutor.png');
+    background-size: cover; /* Adjust as needed */
+    background-position: center; /* Adjust as needed */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.7); /* Adjust the alpha value (0.7 in this case) for desired transparency */
+
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 0 0 calc(50% - 10px); /* Adjust width and margins as needed */
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#signupResult {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*DROP FOR STATES*/
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff; /* Change to your preferred focus color */
+}
+
+option {
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+}
+/*DROP FOR STATES*/
+
+
+#gwid {
+    padding-left: 25px; /* Adjust padding as needed to ensure "G-" is visible */
+}
+
+#gwid::before {
+    content: "G-";
+    position: absolute;
+    padding: 7px;
+    color: #333; /* Adjust color as needed */
+}
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+.footer {
+    background-color: white;
+    color: #033c5a;
+    text-align: center;
+    padding: 0px 0;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+  }
+/* FOOTER */

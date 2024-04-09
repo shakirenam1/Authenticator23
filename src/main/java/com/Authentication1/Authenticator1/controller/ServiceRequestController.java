@@ -6,21 +6,27 @@ import com.Authentication1.Authenticator1.service.ServiceRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/serviceRequests")
 public class ServiceRequestController {
     @Autowired
     private ServiceRequestService service;
 
-    @PostMapping("/")
+    @PostMapping("/insert")
     public ServiceRequest createServiceRequest(@RequestBody ServiceRequest serviceRequest) {
         return service.createOrUpdateServiceRequest(serviceRequest);
     }
 
-    @GetMapping("/{id}")
-    public ServiceRequest getServiceRequest(@PathVariable String id) {
-        return service.getServiceRequest(id).orElseThrow(() -> new RuntimeException("ServiceRequest not found"));
+    @GetMapping("/all")
+    public List<ServiceRequest> getAllServiceRequests() {
+        return service.getAllServiceRequests();
     }
+
+
+
+
 
     @PutMapping("/{id}/status")
     public ServiceRequest updateServiceRequestStatus(@PathVariable String id, @RequestBody String status) {

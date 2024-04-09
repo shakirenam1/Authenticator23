@@ -5,7 +5,9 @@ import com.Authentication1.Authenticator1.model.ServiceRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
+
 
 @Service
 public class ServiceRequestService {
@@ -21,6 +23,11 @@ public class ServiceRequestService {
 
     public Optional<ServiceRequest> getServiceRequest(String id) {
         return repository.findById(id);
+    }
+
+    public List<ServiceRequest> getAllServiceRequests() {
+        return repository.findAll();
+
     }
 
     public ServiceRequest updateStatus(String id, String status) {
@@ -46,4 +53,6 @@ public class ServiceRequestService {
             throw new RuntimeException("ServiceRequest not found");
         }
     }
+
+
 }

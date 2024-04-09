@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Home Page</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#signInForm').submit(function(event) {
+                event.preventDefault();
+                var userId = $('#email').val(); // Assuming the email field is used as userId
+                var password = $('#password').val();
+
+                $.ajax({
+                    url: '/authenticate', // Make sure this URL is reachable from the client
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ userId: userId, password: password }),
+                    success: function(response) {
+                        alert(response);
+                        window.location.href = "dashboard.html";
+                    },
+                    error: function(xhr) {
+                        alert(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="fixed-menu">
+    <div class="header">
+        <img src="gwin.png" alt="Logo" class="logo">
+        <h1 id="hometext">HOME</h1>
+
+    </div>
+    <div class="menu-bar">
+        <ul class="main-menu">
+
+            <!-- Modify the link for Events to scroll to the events section -->
+            <li><a>Events</a></li>
+            <li><a>Services</a></li>
+            <li><a>About US</a></li>
+            <li><a>FAQ</a></li>
+        </ul>
+        <ul class="right-menu">
+
+            <form id="signInForm" style="display: inline-flex; align-items: center; gap: 10px;">
+                <input type="email" id="email" name="email" placeholder="Email Address" required style="padding: 5px;">
+                <input type="password" id="password" name="password" placeholder="Password" required style="padding: 5px;">
+                <button id="signInButton" type="submit">Sign In</button>
+            </form>
+            <button class="menu-btn" id="signUpBtn"><a href="Signup.html">Sign-up</a></button>
+        </ul>
+    </div>
+</div>
+
+
+<!--THE IMAGE ON THE MAIN PAGE-->
+<div class="welcome-text">
+    <h1>Welcome to our Website</h1>
+    <p>We are delighted to have you here!</p>
+</div>
+
+<div class="firstsection">
+    <img id="mainpageimage" src="gwhomeimg.png" alt="">
+</div>
+
+<!--THE IMAGE ON THE MAIN PAGE-->
+
+
+
+<br>
+
+<!--SLIDER-->
+<div class="slider">
+    <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+    <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+    <div class="slider__inner">
+        <div class="slider__contents"><i class="slider__image fa fa-codepen"></i>
+            <h2 class="slider__caption">Natasha Lodhi</h2>
+            <p class="slider__txt">“Campus Marketplace has been a game-changer for George Washington! This innovative solution is perfect for balancing out academic and social life for students and it exceeds out expectations! We are thrilled about the incredible potential it brings.”</p>
+        </div>
+        <div class="slider__contents"><i class="slider__image fa fa-newspaper-o"></i>
+            <h2 class="slider__caption">Emily Johnson</h2>
+            <p class="slider__txt">"GWIN is a lifesaver! As a busy student, I struggled to keep up with my coursework. Thanks to GWIN's affordable tutoring services, I was able to ace my exams without breaking the bank."</p>
+        </div>
+        <div class="slider__contents"><i class="slider__image fa fa-television"></i>
+            <h2 class="slider__caption">Daniel Rodriguez</h2>
+            <p class="slider__txt">"I'm blown away by the range of events offered on GWIN. From academic workshops to social gatherings, there's always something exciting happening. It's like having a personal event planner at my fingertips!"</p>
+        </div>
+        <div class="slider__contents"><i class="slider__image fa fa-diamond"></i>
+            <h2 class="slider__caption">Sarah Patel</h2>
+            <p class="slider__txt">"Using GWIN's pick-up and drop-off services has been a game-changer for me. Not only is it more affordable than other ride-sharing apps, but I also feel safer knowing that I'm supporting fellow students. Thanks, GWIN!"</p>
+        </div>
+    </div>
+</div>
+<!--SLIDER-->
+
+
+
+
+<br>
+
+
+
+
+
+<!--EVENTS TEXT-->
+
+<div id="eventspng">
+    <img id="eventsimg" src="events.png" alt="">
+</div>
+
+
+<div class="subheader">
+    <h1>Events</h1>
+</div>
+
+<div class="gallery">
+    <figure>
+        <img src="flyer1.png" alt="Image 1" data-alt-src="event1.png">
+        <figcaption style="text-align: center;">
+            <a href="https://www.ticketmaster.com/event/150060571E566B23">Buy Tickets</a></figcaption> </figure>
+
+    <figure>
+        <img src="flyer2.png" alt="Image 1" data-alt-src="event2.png">
+        <figcaption style="text-align: center;">
+            <a href="https://www.ticketmaster.com/event/15006037944A15AD">Buy Tickets</a></figcaption> </figure>
+
+    <figure>
+        <img src="flyer3.jpeg" alt="Image 1" data-alt-src="event3.png">
+        <figcaption style="text-align: center;">
+            <a href="https://www.dcartallnight.org/">Buy Tickets</a></figcaption> </figure>
+    <figure>
+        <img src="flyer4.png" alt="Image 1" data-alt-src="event4.png">
+        <figcaption style="text-align: center;">
+            <a href="https://www.ticketmaster.com/sigala-washington-district-of-columbia-03-28-2024/event/1500603F98442066">Buy Tickets</a></figcaption> </figure>
+
+</div>
+
+
+<!--EVENTS TEXT-->
+
+
+
+
+<!-- Section = Services -->
+
+
+<div id="SERVICESpng">
+    <img id="SERVICESIMG" src="SERVICES.PNG" alt="">
+</div>
+<BR></BR>
+<DIV id="SERVICES">
+    <section class="image-section" id="servicessection">
+        <div class="image-container">
+            <img src="tutor.png" alt="Image 1">
+            <a href="signup.html" class="button">Find a Tutor</a>
+        </div>
+        <div class="image-container">
+            <img src="workout.png" alt="Image 2">
+            <a href="signup.html" class="button">Find a Workout Buddy</a>
+        </div>
+        <div class="image-container">
+            <img src="pickup.png" alt="Image 3">
+            <a href="signup.html" class="button">Pick Up and Drop Off Services</a>
+        </div>
+    </section>
+</DIV>
+
+<!-- Section = Services -->
+
+
+
+<div id="aboutusimgdiv">
+    <p id="ABOUTUSTEXT">ABOUT US</p>
+</div>
+
+
+<!--ABOUT US-->
+<div class="outerdiv">
+    <div class="innerdiv">
+        <!-- div1 -->
+        <div class="div1 eachdiv">
+            <div class="userdetails">
+                <div class="imgbox">
+                    <img src="mohammad.png" alt="">
+                </div>
+                <div class="detbox">
+                    <p class="name">Mohammad Khan</p>
+                    <p class="designation">UI Developer</p>
+                </div>
+            </div>
+            <div class="review">
+                <h4>I received a job offer mid-course, and the subjects.</h4>
+                <p>“ I was an EMT for many years before I joined the bootca ”</p>
+            </div>
+        </div>
+        <!-- div2 -->
+        <div class="div2 eachdiv">
+            <div class="userdetails">
+                <div class="imgbox">
+                    <img src="divya.png" alt="">
+                </div>
+                <div class="detbox">
+                    <p class="name">Divya Chaturvedi</p>
+                    <p class="designation">UI Developer</p>
+                </div>
+            </div>
+            <div class="review">
+                <h4>The team was very supportive and kept me motivated</h4>
+                <p>“ I started as a total newbie with virtual. ”</p>
+            </div>
+        </div>
+        <!-- div3 -->
+        <div class="div3 eachdiv">
+            <div class="userdetails">
+                <div class="imgbox">
+                    <img src="david.png" alt="">
+                </div>
+                <div class="detbox">
+                    <p class="name dark">David Ndoma</p>
+                    <p class="designation dark">Researcher</p>
+                </div>
+            </div>
+            <div class="review dark">
+                <h4>Such a life-changing experience. Highly recommended!</h4>
+                <p>“ Before joining the bootcamp, I’vell took my learnin aa full-stack 100% recommend! ”</p>
+            </div>
+        </div>
+        <!-- div4 -->
+        <div class="div4 eachdiv">
+            <div class="userdetails">
+                <div class="imgbox">
+                    <img src="shakir.png" alt="">
+                </div>
+                <div class="detbox">
+                    <p class="name dark">Shakir Enam</p>
+                    <p class="designation dark">UX Developer</p>
+                </div>
+            </div>
+            <div class="review dark">
+                <h4>An overall wonderful and rewarding experience</h4>
+                <p>“ Thank you for the wonderful experience! I now have a job I really enj. ”</p>
+            </div>
+        </div>
+        <!-- div5 -->
+        <div class="div5 eachdiv">
+            <div class="userdetails">
+                <div class="imgbox">
+                    <img src="natasha.png" alt="">
+                </div>
+                <div class="detbox">
+                    <p class="name">Natasha Lodhi</p>
+                    <p class="designation">Documentation Analyst</p>
+                </div>
+            </div>
+            <div class="review">
+                <h4>Awesome teaching support from TAs wasy.</h4>
+                <p>“ The staff seem genuinely concerned about mynal attention you need from an incredible community of smart and amazing people. ”</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ABOUT US-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--FAQ-->
+<div class="page__wrapper">
+    <h1 class="heading">FREQUENTLY ASKED QUESTIONS</h1>
+    <div class="accordion">
+        <details>
+            <summary>How much is the subscription?</summary>
+            <p>INSERT</p>
+        </details>
+        <details>
+            <summary>How can we contact you?</summary>
+            <p>INSERT</p>
+        </details>
+        <details>
+            <summary>Can I use a non-GW email to sign up?</summary>
+            <p>INSERT</p>
+        </details>
+        <details>
+            <summary>Where can I access the rest of the events list</summary>
+            <p>INSERT</p>
+        </details>
+
+
+
+    </div>
+</div>
+<br><br><br><br><br><br>
+
+
+
+
+
+<!--FAQ-->
+
+
+
+
+
+
+<br>
+
+
+<div class="footer">
+    <p>&copy; 2024 George Washington Interactive Network</p>
+    <br>
+</div>
+<!-- Section = Footer -->
+
+
+
+<!-- SCRIPT -->
+
+
+<script>
+    // Function to show event info overlay on hover
+    document.querySelectorAll('.event-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const info = this.querySelector('.event-info');
+            info.style.display = 'block';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            const info = this.querySelector('.event-info');
+            info.style.display = 'none';
+        });
+
+        // Navigate to the custom link on click
+        card.addEventListener('click', function() {
+            const link = this.getAttribute('data-link');
+            window.location.href = link;
+        });
+    });
+
+
+
+</script>
+<script src="home_events.js"></script>
+
+
+</body>
+</html>

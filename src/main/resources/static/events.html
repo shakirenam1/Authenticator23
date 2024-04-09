@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GWIN | Events</title>
+  <link rel="stylesheet" href="events.css"> <!-- Link to external CSS file -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('#signInForm').submit(function(event) {
+            event.preventDefault();
+            var userId = $('#email').val(); // Assuming the email field is used as userId
+            var password = $('#password').val();
+
+            $.ajax({
+                url: '/authenticate', // Make sure this URL is reachable from the client
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ userId: userId, password: password }),
+                success: function(response) {
+                    alert(response);
+                    window.location.href = "serviceRequest.html";
+                },
+                error: function(xhr) {
+                    alert(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+</head>
+<body>
+
+<div class="fixed-menu">
+    <div class="header">
+        <img src="gwin.png" alt="Logo" class="logo">
+        <h1 id="eventstext">EVENTS</h1>
+       
+    </div>
+    <div class="menu-bar">
+        <ul class="main-menu">
+
+            <!-- Modify the link for Events to scroll to the events section -->
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="myservices.html">My Services</a></li>
+            <li><a href="myrequests.html">My Requests</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="404.html">About US</a></li>
+            <li><a href="404.html"> FAQ</a></li>
+        </ul>
+    <ul class="right-menu">
+        <div class="dropdown">
+            <button class="dropdown-btn">Settings</button>
+            <div class="dropdown-content">
+                <a href="profile.html">Profile</a>
+                <a href="#">Edit Account</a>
+                <a href="home.html">Logout</a>
+            </div>
+        </div>
+    </ul>
+</div>
+</div>
+
+
+  <div id="backgroundevent">
+    <img id="events2background" src="events2.png" alt="">
+</div>
+
+
+
+    <div class="subheader">
+      <h1>Welcome to Events</h1>
+      </div>
+
+  <div class="gallery">
+    <figure>
+    <img src="flyer1.png" alt="Image 1" data-alt-src="event1.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/150060571E566B23">Buy Tickets</a></figcaption> </figure>
+
+ <figure>
+    <img src="flyer2.png" alt="Image 1" data-alt-src="event2.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/15006037944A15AD">Buy Tickets</a></figcaption> </figure>
+
+    <figure>
+    <img src="flyer3.jpeg" alt="Image 1" data-alt-src="event3.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/15006037944A15AD">Buy Tickets</a></figcaption> </figure>
+
+    <figure>
+    <img src="flyer4.png" alt="Image 1" data-alt-src="event4.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/steve-aoki-washington-district-of-columbia-03-29-2024/event/15005F688ABA1400">Buy Tickets</a></figcaption> </figure>
+   
+       <figure>
+    <img src="flyer5.png" alt="Image 1" data-alt-src="event5.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/steve-aoki-washington-district-of-columbia-03-29-2024/event/15005F688ABA1400">Buy Tickets</a></figcaption> </figure>
+
+
+           <figure>
+    <img src="flyer6.png" alt="Image 1" data-alt-src="event6.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/1500605C88811A70">Buy Tickets</a></figcaption> </figure>
+
+
+           <figure>
+    <img src="flyer7.png" alt="Image 1" data-alt-src="event7.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/1500605495FF2209">Buy Tickets</a></figcaption> </figure>
+
+          <figure>
+    <img src="flyer8.png" alt="Image 1" data-alt-src="event8.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/15006033207FAA82">Buy Tickets</a></figcaption> </figure>
+
+ <figure>
+    <img src="flyer9.png" alt="Image 1" data-alt-src="event9.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/15005F8EC3C75B46">Buy Tickets</a></figcaption> </figure>
+ <figure>
+    <img src="flyer10.png" alt="Image 1" data-alt-src="event10.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/1500604D99272692">Buy Tickets</a></figcaption> </figure>
+
+ <figure>
+    <img src="flyer11.png" alt="Image 1" data-alt-src="event11.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/150060491481695C">Buy Tickets</a></figcaption> </figure>
+
+ <figure>
+    <img src="flyer12.png" alt="Image 1" data-alt-src="event12.png">
+    <figcaption style="text-align: center;">
+        <a href="https://www.ticketmaster.com/event/15005F6EE83834DE">Buy Tickets</a></figcaption> </figure>
+
+
+</div>
+
+<div>
+  <br><br><br> <br><br><br>
+</div>
+
+<div class="contact-button">
+  <a href="contactpage.html"><button id="contactBtn">Contact Us</button></a>
+  <div><BR></BR><BR></BR></div>
+</div>
+
+
+
+<div class="footer">
+    <p>&copy; 2024 George Washington Interactive Network</p>
+  </div>
+
+<script src="events.js"></script>
+
+</body>
+</html>

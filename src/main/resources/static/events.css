@@ -1,0 +1,346 @@
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .card {
+    flex: 1;
+    background-color: #dde6f9;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .card h2 {
+    margin-top: 0;
+  }
+  .footer {
+    background-color: white;
+    color: #033c5a;
+    text-align: center;
+    padding: 0px 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+  }
+   video {
+        position: relative;
+        top: 0;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+      #home {
+      position: relative;
+      text-align: center;
+      padding: 0px 0;
+      color: #000000; 
+  }
+  
+  .progress-bar {
+    height: 10px;
+    width: 100%; /* Adjust as needed */
+    background-color: #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .in-progress .progress-bar {
+    background-color: orange; /* Progress bar color for "In Progress" status */
+  }
+  
+  .completed .progress-bar {
+    background-color: green; /* Progress bar color for "Completed" status */
+  }
+  
+  .cancelled .progress-bar {
+    background-color: red; /* Progress bar color for "Cancelled" status */
+  }
+  
+  /* Styles for chat box */
+  .chat-container {
+    position: fixed;
+    bottom: 80px; /* Adjust this value to leave space for the footer */
+    right: 20px;
+    width: 300px;
+  }
+  
+  .chat-box {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slide-in-bottom 0.5s ease-out;
+    background-color: #dde6f9; 
+  }
+  
+  .chat-message {
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for input and button */
+  #user-message {
+    width: calc(100% - 100px);
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  position: relative;}
+  
+  button:hover {
+    background-color: #0056b3;}
+  
+  /* Animation */
+  @keyframes slide-in-bottom {
+    from {transform: translateY(100%);}
+    to {transform: translateY(0);}}
+  
+    .logo {
+    width: 100px; /* Set width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add space between logo and text */
+  }
+
+  
+
+  
+  .right-menu { /* New */
+    display: flex;
+    align-items: center;
+  }
+  
+  .right-menu li {
+    margin-left: 20px; /* Adjust spacing between items */
+  }
+  
+
+  
+  
+
+  /* Additional CSS styles for the gallery */
+  
+  /* Style the gallery container */
+  .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      padding: 16px;
+      margin: auto;
+      max-width: 1200px;
+  }
+  
+  /* Style each image container (figure) in the gallery */
+  .gallery figure {
+      border: 2px solid #fff; /* Add a white border around each image */
+      border-radius: 8px; /* Round the corners of the image container */
+      overflow: hidden; /* Clip the rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+      transition: transform 0.3s ease-in-out; /* Smooth scaling transition on hover */
+  }
+  
+  /* Style images within the gallery */
+  .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transform: scale(1); /* Reset the scale of the image */
+      transition: transform 0.3s ease-in-out; /* Smooth scaling transition on hover */
+  }
+  
+  /* Change styles on hover for images within the gallery */
+  .gallery figure:hover {
+      border-color: #ffd700; /* Change border color to gold on hover */
+      transform: scale(1.05); /* Slightly scale up the image on hover */
+  }
+  
+  /* Add new CSS for flip effect when clicked */
+  .gallery img.flipped {
+      transform: rotateY(180deg); /* Rotate the image 180 degrees on click */
+      transition: transform 0.5s ease-in-out; /* Add a smooth transition for the flip effect */
+  }
+  
+  .subheader {
+    margin-top: 10px;
+      background-color: rgba(255, 255, 255, 0.5); /* White color with 50% opacity */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center vertically */
+      align-items: center; /* Center horizontally */
+      height: 20vh; /* Optional: Adjust the height as needed */
+  }
+  
+    
+  .contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .contact-button button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    width: 80px;
+    height: 60px;
+    font-size: 12px; /* Adjust the font size here */
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  .contact-button button:hover {
+    background-color: #0056b3;
+  }
+
+
+
+  /* HOME PAGE TOP HEADERS WITH SIGN IN AND SIGN UP AND LINKS*/
+html, body {
+    height: 100%;
+  }
+  body {
+    font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+  }
+  
+  
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+#eventstext{
+margin-left: -1020px;
+color: #00578a;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 100; /* Set a higher z-index value */
+
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f9f9f9;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  right: 0;
+}
+  
+  .logo {
+    width: 200px; /* Set width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add space between logo and text */
+  }
+  .menu-bar {
+    background-color: #00578a;
+    color: #dde6f9;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Adjust alignment */
+  }
+  .menu-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-bar ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .menu-bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Gibson-Book", Helvetica, Arial, sans-serif;
+  }
+  
+  .menu-bar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  #signUpBtn {
+    padding: 8px 15px;
+    background-color: rgba(230, 230, 230, 0.5); /* White-ish grey translucent background */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;}
+  
+   #signInButton {
+    padding: 8px 15px;
+    background-color: rgba(230, 230, 230, 0.5); /* White-ish grey translucent background */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;}
+  
+    /* HOME PAGE TOP HEADERS WITH SIGN IN AND SIGN UP AND LINKS*/
+
+#events2background{
+    width: 1440px;
+    height: 430px;
+}
+
+#backgroundevent{
+    width: 100px;
+}
+
+

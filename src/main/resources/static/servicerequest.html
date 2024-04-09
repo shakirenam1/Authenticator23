@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICE REQUESTS</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="servicerequest.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#signInForm').submit(function(event) {
+                event.preventDefault();
+                var userId = $('#email').val(); // Assuming the email field is used as userId
+                var password = $('#password').val();
+
+                $.ajax({
+                    url: '/authenticate', // Make sure this URL is reachable from the client
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ userId: userId, password: password }),
+                    success: function(response) {
+                        alert(response);
+                        window.location.href = "serviceRequest.html";
+                    },
+                    error: function(xhr) {
+                        alert(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="fixed-menu">
+        <div class="header">
+            <img src="gwin.png" alt="Logo" class="logo">
+            <h1 id="myprofiletext">Service Request</h1>
+           
+        </div>
+        <div class="menu-bar">
+            <ul class="main-menu">
+    
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="myservices.html">My Services</a></li>
+                <li><a href="myrequests.html">My Requests</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="404.html">About US</a></li>
+                <li><a href="404.html"> FAQ</a></li>
+            </ul>
+        <ul class="right-menu">
+            <div class="dropdown">
+                <button class="dropdown-btn">Settings</button>
+                <div class="dropdown-content">
+                    <a href="profile.html">Profile</a>
+                    <a href="#">Edit Account</a>
+                    <a href="home.html">Logout</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+<div class="container">
+    <h2>Create Service Request</h2>
+    <form id="serviceRequestForm">
+        <input type="hidden" id="id" name="id" value="660b3a6c8caf3a72c53138e9">
+
+        <div class="form-group">
+            <label for="serviceType">Service Type:</label>
+            <input type="text" id="serviceType" name="serviceType" placeholder="Type of Service">
+        </div>
+
+        <div class="form-group">
+            <label for="serviceCreationDate">Service Creation Date:</label>
+            <input type="datetime-local" id="serviceCreationDate" name="serviceCreationDate">
+        </div>
+
+        <div class="form-group">
+            <label for="serviceInfo">Service Info:</label>
+            <textarea id="serviceInfo" name="serviceInfo" placeholder="Details about the service"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="status" placeholder="Current Status">
+        </div>
+
+        <div class="form-group">
+            <label for="paymentAmount">Payment Amount:</label>
+            <input type="number" id="paymentAmount" name="paymentAmount" placeholder="Amount">
+        </div>
+
+        <div class="form-group">
+            <label for="creatorEmail">Creator Email:</label>
+            <input type="email" id="creatorEmail" name="creatorEmail" placeholder="Email Address">
+        </div>
+
+        <div class="form-group">
+            <label for="creatorPhone">Creator Phone:</label>
+            <input type="tel" id="creatorPhone" name="creatorPhone" placeholder="Phone Number">
+        </div>
+
+        <button type="submit" class="btn">Submit Service Request</button>
+    </form>
+</div>
+<BR></BR>
+
+<div class="container" id="serviceRequestsContainer">
+    <h2>Service Requests</h2>
+    <table id="serviceRequestsTable" class="table-container">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Service Info</th>
+            <th>Payment Amount</th>
+            <th>Creator Email</th>
+            <th>Creator Phone</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody id="serviceRequestsList">
+        <!-- Service requests will be inserted here by the AJAX script -->
+        </tbody>
+    </table>
+</div>
+<BR></BR>
+<div class="container">
+    <h2>Search Service Requests by Email</h2>
+    <div class="form-group">
+        <label for="emailInput">Email:</label>
+        <input type="email" id="emailInput" class="form-control" placeholder="Enter email">
+        <button id="fetchByEmailBtn" class="btn">Search</button>
+    </div>
+    <table id="serviceRequestsByEmailTable" class="table-container">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Service Info</th>
+            <th>Payment Amount</th>
+            <th>Creator Email</th>
+            <th>Creator Phone</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Service request entries will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+<br><br>
+
+
+
+<div class="footer">
+    <p>&copy; 2024 George Washington Interactive Network</p>
+</div>
+<!-- Section = Footer -->
+
+
+
+
+
+
+
+    <script>
+        // Function to show event info overlay on hover
+        document.querySelectorAll('.event-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const info = this.querySelector('.event-info');
+                info.style.display = 'block';
+            });
+    
+            card.addEventListener('mouseleave', function() {
+                const info = this.querySelector('.event-info');
+                info.style.display = 'none';
+            });
+    
+            // Navigate to the custom link on click
+            card.addEventListener('click', function() {
+                const link = this.getAttribute('data-link');
+                window.location.href = link;
+            });
+        });
+    
+    
+
+    
+    </script>
+
+<script>
+    $("#serviceRequestForm").submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        var serviceRequestData = {
+            //id: $("#id").val(), This should be used to update an existing service request
+            id: null,
+            serviceType: $("#serviceType").val(),
+            serviceCreationDate: $("#serviceCreationDate").val(),
+            serviceInfo: $("#serviceInfo").val(),
+            status: $("#status").val(),
+            paymentAmount: $("#paymentAmount").val(),
+            creatorEmail: $("#creatorEmail").val(),
+            creatorPhone: $("#creatorPhone").val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "serviceRequests/insert", // Replace with your actual endpoint
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(serviceRequestData)
+        })
+            .done(function(response) {
+                // Handle successful response
+                console.log("Response:", response);
+                if (response.status === "success") {
+                    alert("Service Request Submitted Successfully!");
+                    $('#serviceRequestForm')[0].reset(); // Optional: Reset form
+                    // Further UI updates or actions on success
+                } else {
+                    // Server responded, but with a non-success status
+                    alert("Submission message: " + response.message);
+                    // Further actions based on non-success status
+                }
+            })
+            .fail(function(xhr, status, error) {
+                // Handle errors
+                alert("Failed to submit service request: " + error);
+                console.error("Error details:", status, error);
+            })
+            .always(function() {
+                // Code to run regardless of success or failure
+                console.log("AJAX request completed.");
+                // Actions like hiding a loading indicator
+            });
+    });
+
+</script>
+
+<script>
+    $(document).ready(function() {
+        // Function to fetch service requests from the server
+        function fetchServiceRequests() {
+            $.ajax({
+                type: "GET",
+                url: "/serviceRequests/all", // Replace with the endpoint that returns the list of service requests
+                dataType: 'json',
+                    success: function(serviceRequests) {
+                        var tableBody = $("#serviceRequestsList");
+                        tableBody.empty(); // Clear the table before adding new entries
+
+                        // Loop through the array of service requests
+                        serviceRequests.forEach(function(serviceRequest) {
+                            // Create a table row for each service request and append to the tbody
+                            var tableRow = $('<tr>')
+                                .append(`<td>${serviceRequest.id}</td>`)
+                                .append(`<td>${serviceRequest.serviceType}</td>`)
+                                .append(`<td>${serviceRequest.serviceCreationDate}</td>`)
+                                .append(`<td>${serviceRequest.serviceInfo}</td>`)
+                                .append(`<td>${serviceRequest.paymentAmount}</td>`)
+                                .append(`<td>${serviceRequest.creatorEmail}</td>`)
+                                .append(`<td>${serviceRequest.creatorPhone}</td>`)
+                                .append(`<td>${serviceRequest.status}</td>`);
+                            tableBody.append(tableRow);
+                        });
+
+                },
+                error: function(xhr, status, error) {
+                    // Handle any errors that occur during the request
+                    console.error("Error fetching service requests: " + error);
+                    $("#serviceRequestsList").append('<li>Error fetching service requests.</li>');
+                }
+            });
+        }
+
+        // Call the fetch function to load service requests when the page is ready
+        fetchServiceRequests();
+    });
+</script>
+
+
+    
+    
+    </body>
+    </html>
+    
